@@ -1,0 +1,64 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    float: center;
+} */
+
+.container {
+    margin: 10px auto;
+}
+
+h2 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(175, 219, 245);
+}
+
+li1 {
+    display: inline-block;
+    font-size: 1.5em;
+    color:rgb(175, 219, 245);
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li1 span {
+    display: block;
+    font-size: 4.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#showcase {
+    background-size: cover;
+    background-color: rgb(27, 73, 101);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background-color: rgb(27, 73, 101);
+}
+
+#showcase .showcont {
+    background-color: rgb(27, 73, 101);
+    padding-bottom: 20px;
+}
+
+@media all and (max-width: 700px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+    li1 {
+        font-size: 1.125rem;
+        padding: .75rem;
+    }
+    li1 span {
+        font-size: 2.375rem;
+    }
+}

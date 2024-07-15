@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box;
+    font-family: Hind, Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin:0;
+    font-family: Hind, Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 48, 73);
+    overflow-x: hidden;
+    /*background-color : #006666;*/
+}
+
+#toppanel{
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+}
+
+#toppanel a{
+      
+    float: right;
+    display:block;
+    color:rgb(0, 48, 73);
+    text-align: center;
+    font-family:Hind, Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin:0;
+    border:2px;
+    padding: 2%;
+    text-transform:uppercase;
+    text-decoration: none;
+}
+
+#toppanel .icon {
+    display: none;
+}
+
+nav {
+    height: 5vw;
+    width: 100vw;
+    background-color: #ffffff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: relative;
+    top: 0;
+    z-index: 10;
+}
+
+/*betuk, megjelenes*/
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4vw;
+    /* color:rgb(0, 48, 73); */
+    color: rgb(175, 219, 245);
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* background-color : #006666; */
+    border:2px;
+    /* padding-left: 650px; */
+    text-align: center;
+    /*color: rgb(178, 13, 48)*/
+    /*color: rgb (188,171,174)*/
+
+
+}
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3vw;
+    /* color:rgb(0, 48, 73); */
+    color: rgb(175, 219, 245);
+    font-weight: bold;
+    text-transform:uppercase;
+    /* background-color : #006666; */
+    border:2px;
+    /* padding-left: 650px; */
+    text-align: center;
+}
+
+h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2vw;
+    color: rgb(0, 48, 73);
+    text-align: center;
+}
+
+p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    color: rgb(27, 73, 101);
+    text-align: center;
+}
+
+.bottom{
+    background-color: rgb(175, 219, 245);
+    overflow: hidden;
+    padding: center;
+}
+
+.panel{
+    background-color: rgb(27, 73, 101);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    background-color: rgb(27, 73, 101);
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+/*link stilus*/
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+
+.nav-links li a:hover {
+    color: rgb(27, 73, 101);
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color:rgb(27, 73, 101);
+    position: absolute;
+    bottom: 0;
+    transition: all ease-in-out 250ms;
+     /* margin: 0 0 0 10%;  */
+}
+
+.nav-links li a:hover::before {
+    width: 100%;
+}
+
+/*hamburger ikon*/
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: rgb(27, 73, 101);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*kisebb kepernyore*/
+@media screen and (max-width: 800px) {
+    h4{
+        font-size: 3vw;
+    }
+    h5{
+        font-size: 2.5vw;
+    }
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    .nav-links {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: #cfcfcf;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        margin: 0;
+        transition: all 0.5s ease;
+    }
+    
+    .nav-links li:nth-child(1) {
+        transition-delay: 0.2s;
+    }
+    
+    .nav-links li:nth-child(2) {
+        transition-delay: 0.4s;
+    }
+    
+    .nav-links li:nth-child(3) {
+        transition-delay: 0.6s;
+    }
+    
+    .nav-links li:nth-child(4) {
+        transition-delay: 0.7s;
+    }
+    
+    .nav-links li:nth-child(5) {
+        transition-delay: 0.8s;
+    }
+    
+    .nav-links li:nth-child(6),
+    .nav-links li:nth-child(7) {
+        margin: 0;
+        transition-delay: 0.9s;
+    }
+    
+    li.fade {
+        opacity: 1;
+    }
+    
+}
+
+.navigation-panel {
+    display: none;
+  }
+  
+  .navigation-panel.open {
+    display: block;
+  }
+  
+  .navigation-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navigation-panel ul li {
+    margin-bottom: 10px;
+  }
+  
+  .navigation-panel ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+/*icon sorok animacio*/
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*gomb*/
+
+.butt{
+    margin-top:5px;
+    margin-left: 20px;
+    border-radius: 25%;
+    display:  left;
+    padding: 5px 10px;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #B20D30;
+    border: none;
+    border-radius: 15px;    
+    box-shadow: 0 5px #cfcfcf;
+    }
+      
+.butt:hover {
+    background-color:rgb(175, 219, 245);
+    color:black;
+}
+      
+.butt:active {
+    background-color:  rgb(175, 219, 245);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/*kephelyezgetes*/
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 5%;
+}
+.center2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    margin-top: 5%;
+}

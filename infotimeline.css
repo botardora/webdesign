@@ -1,0 +1,110 @@
+.demo{ background-color: #A4DEF9; }
+.main-timeline{
+    font-family: 'Titillium Web', sans-serif;
+    padding: 120px 0 0;
+    position: relative;
+}
+ .main-timeline:before{
+    content: '';
+    background-color: #FFFF;
+    height: 100%;
+    width: 60%;
+    box-shadow: 0 0 10px #333;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: 10px;
+}
+.main-timeline .timeline{
+    margin: -42px 0 0 0;
+    position: relative;
+    z-index: 1;
+}
+.main-timeline .timeline:before{
+    content: '';
+    border: 20px solid #A4DEF9;
+    height: 90%;
+    width: 50%;
+    border-radius: 100px;
+    position: absolute;
+    left: 12%;
+    top: 22px;
+    z-index: -1;
+}
+.main-timeline .timeline-content{
+    background-color: #FFFF;
+    text-align: center;
+    width: 60%;
+    padding: 10px 55px 60px;
+    margin: 0 auto;
+    display: block;
+}
+.main-timeline .timeline-content:hover{ text-decoration: none; }
+/* .main-timeline .timeline-year{
+    color: #A4DEF9;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 10px;
+} */
+.main-timeline .title{
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    text-decoration: none;
+}
+.main-timeline .title:after{
+    content: '';
+    background-color: #A4DEF9;
+    height: 3px;
+    width: 60px;
+    margin: 12px auto;
+    display: block;
+
+}
+.main-timeline .description{
+    color: #333;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.main-timeline .timeline:nth-child(even):before{
+    left: auto;
+    right: 12%;
+}
+.main-timeline .timeline:nth-child(4n+2):before{ border-color: #9a8f97; }
+.main-timeline .timeline:nth-child(4n+2) .timeline-year{ color: #9a8f97; }
+.main-timeline .timeline:nth-child(4n+2) .title:after{ background-color: #9a8f97; }
+.main-timeline .timeline:nth-child(4n+3):before{ border-color: #A4DEF9; }
+.main-timeline .timeline:nth-child(4n+3) .timeline-year{ color: #A4DEF9; }
+.main-timeline .timeline:nth-child(4n+3) .title:after{ background-color: #A4DEF9; }
+.main-timeline .timeline:nth-child(4n+4):before{ border-color: #9a8f97; }
+.main-timeline .timeline:nth-child(4n+4) .timeline-year{ color: #9a8f97; }
+.main-timeline .timeline:nth-child(4n+4) .title:after{ background-color: #9a8f97; }
+@media only screen and (max-width:990px){
+    .main-timeline .timeline:before{
+        left: 5%;
+        border-radius: 120px;
+    }
+    .main-timeline .timeline:nth-child(even):before{ right: 5%; }
+}
+@media only screen and (max-width:576px){
+    .main-timeline:before{ width: 85%; }
+    .main-timeline .timeline{ margin: -38px 0 0 0; }
+    .main-timeline .timeline:before{
+        border-width: 8px;
+        border-radius: 0;
+        left: 0;
+    }
+    .main-timeline .timeline:nth-child(even):before{ right: 0; }
+    .main-timeline .timeline-content{ width: 85%; }
+    .main-timeline .title{ font-size: 18px; }
+}
+
+p {
+    text-decoration: none;
+}
+
+
+/*https://bestjquery.com/tutorial/timeline/demo66/*/

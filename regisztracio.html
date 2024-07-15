@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+    <html lang="hu">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="EMIK, konferencia, erdélyi informatikus, informatika, regisztráció">
+    <title>17. EMIK</title>
+    <link rel="icon" type="image/x-icon" href="fsharp-logo.png">
+    <link rel="stylesheet" href="konferencia2.css">
+
+  <style>
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    form .a{
+        text-align: center;
+        color:rgb(27, 73, 101);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+    }
+    h3{
+        text-align: right;
+        color:rgb(27, 73, 101);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+    }
+
+    button[type="button"] {
+      background-color: #f44336;
+    }
+
+    @media screen and (max-width: 700px) {
+      form {
+        padding: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        padding: 6px;
+      }
+
+      button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="toppanel">
+        <nav>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links" >
+                <div class="logo">
+                    <img src="fsharp-logo2.png" alt="Logo Image">
+                </div>
+                <li><a href="konferencia.html">Kezdőoldal</a></li>
+                <li><a href="rolunk.html">Rólunk</a></li>
+                <li><a href="informaciok.html">Információk</a></li>
+                <li><a href="eloadok.html">Előadók</a></li>
+                <li><a href="kerdesek.html">Kérdések</a></li>
+                <li><a href="regisztracio.html" >Regisztráció</a></li>
+                <li><a href="jelentkezes.html" >Jelentkezés</a></li>
+            </ul>
+        </nav>
+        <main class="container">
+  <h2>Regisztráció</h2>
+  
+  <form class="form" action="regisztracio.php" method="post">
+    <!-- <h2>Regisztráció</h2> -->
+    <label>Vezetéknév:</label>
+    <input type="text" id="VNev" name="VNev" required>
+    <label>Keresztnév:</label>
+    <input type="text" id="KNev" name="KNev" required>
+    <label>Email cím:</label>
+    <input type="email" id="Email" name="Email" required>
+    <label for="intezmeny">Intézmény:</label>
+      <select id="Intezmeny" name="Intezmeny" required>
+        <option value="babes">Babes-Bolyai Tudomanyegyetem</option>
+        <option value="sapientia">Sapientia</option>
+        <option value="obudai">Obudai egyetem</option>
+        <option value="elte">ELTE</option>
+        <option value="corvinus">Corvinus egyetem</option>
+        <option value="debreceni">Debreceni egyetem</option>
+        <option value="Egyéb">Egyéb</option>
+      </select>
+    <label>Ország:</label>
+    <input type="text" id="Orszag" name="Orszag" required>
+    <!-- <label>Telefonszám:</label>
+    <input type="tel" id="phone" required>
+    <label>Lakcím:</label>
+    <input type="text" id="address" required> -->
+    <label>Jelszó:</label>
+    <input type="password" id="jelszo" name="jelszo" required>
+    <label>Jelszó megerősítése:</label>
+    <input type="password" id="jelszo2" name="jelszo2" required>
+    <h3>Van már felhasználó fiókod? Jelentkezz be<a href="bejelentkezes.html">itt.</a></h3>
+    <button type="submit">Regisztrálok</button>
+    <button type="button" onclick="goToHomePage()">Mégse</button>
+    <!-- <p>Már van fiókja? <a href="#" onclick="showLoginForm()">Jelentkezzen be</a></p> -->
+  </form>
+ </main>
+ </body>
+  <script>
+
+    function registerUser(event) {
+      event.preventDefault();
+
+      // Űrlap mezőinek ellenőrzése
+      var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var address = document.getElementById('address').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Telefonszám és email cím validáció
+      var phoneRegex = /^\d{10}$/;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // if (!phoneRegex.test(phone)) {
+      //   alert('Helytelen telefonszám formátum!');
+      //   return;
+      // }
+
+      if (!emailRegex.test(email)) {
+        alert('Helytelen email cím formátum!');
+        return;
+      }
+
+      // Jelszó megerősítésének ellenőrzése
+      if (password !== confirmPassword) {
+        alert('A jelszavak nem egyeznek!');
+        return;
+      }
+      // Sikeres regisztráció üzenet és átirányítás
+      alert('Sikeres regisztráció!');
+      location.href = "konferencia.html";
+    }
+
+    function goToHomePage() {
+        location.href = "konferencia.html";
+        href='konferencia.html';
+    }
+
+  
+  </script>
+  <script src="hamburger.js"></script>
+</html>
